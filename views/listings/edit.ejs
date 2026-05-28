@@ -1,0 +1,59 @@
+<% layout("layouts/boilerplate") -%>
+<br><br>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h3>Edit the Listing</h3>
+
+    <form method="POST" action="/listing/<%= edetails._id %>?_method=PUT"  novalidate class="needs-validation"  enctype="multipart/form-data">
+
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input name="listing[title]" value="<%= edetails.title %>" class="form-control" required> 
+            
+            <div class="invalid-feedback">Enter Valid Title</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea name="listing[description]" class="form-control" required><%= edetails.description %></textarea>
+        <div class="invalid-feedback">Enter Valid Discription</div>
+      </div>
+
+      <div class="mb-3">
+        Orignal Image<br>
+        <img src="<%= orgImageUrl %>"
+      </div>
+     
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input name="listing[image]" type="file" placeholder="Give Image" class="form-control" >
+        </div>
+
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label class="form-label">Price</label>
+          <input name="listing[price]" value="<%= edetails.price %>" class="form-control" required>
+           <div class="invalid-feedback">Enter Valid Price</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label class="form-label">Location</label>
+          <input name="listing[location]" value="<%= edetails.location %>" class="form-control" required>
+          <div class="invalid-feedback">Enter Valid Location</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Country</label>
+        <input name="listing[country]" value="<%= edetails.country %>" class="form-control" required>
+        <div class="invalid-feedback">Enter Valid Country</div>
+      </div>
+        <br>
+      <button class="btn btn-dark e-button">Edit</button>
+
+    </form>
+  </div>
+</div>
+

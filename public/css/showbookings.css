@@ -1,0 +1,528 @@
+
+  :root {
+    --primary:       #1F3A5F;
+    --primary-light: #EEF3F9;
+    --border:        #E8EDF3;
+    --text:          #111827;
+    --muted:         #6B7280;
+    --bg:            #F4F6FA;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: Inter, sans-serif;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .show-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+
+  /* ── TITLE ── */
+  .show-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .show-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .show-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* ── IMAGE ── */
+  .show-image-wrap {
+    width: 100%;
+    height: 370px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  .show-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── TWO-COL LAYOUT ── */
+  .show-body {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* ── LEFT DETAILS ── */
+  .show-details {}
+
+  .detail-section {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+
+  .detail-section h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .info-item label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .info-item p {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .price-highlight {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 100px;
+    padding: 5px 13px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* ── BOOKING CARD ── */
+  .booking-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 26px;
+    position: sticky;
+    top: 84px;
+  }
+
+  .booking-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .b-price {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+  }
+
+  .b-night {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .b-rating {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  /* Date box */
+  .date-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .date-input {
+    padding: 12px 14px;
+  }
+
+  .date-input:first-child {
+    border-right: 1px solid var(--border);
+  }
+
+  .date-input label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  .date-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    font-family: Inter, sans-serif;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .date-input input::placeholder { color: #C0C8D4; }
+
+  /* Guest box */
+  .guest-box {
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .guest-box label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  .guest-box select {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    font-family: Inter, sans-serif;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  /* Days box */
+  .days-box {
+    background: var(--primary-light);
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .days-box label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary);
+  }
+
+  .days-box p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* Reserve btn */
+  .reserve-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    margin-bottom: 4px;
+  }
+
+  .reserve-btn:hover { opacity: 0.88; }
+  .reserve-btn:active { transform: scale(0.99); }
+
+  .charge-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+
+  /* Price breakdown */
+  .price-breakdown {
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .breakdown-row.total {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: 2px;
+  }
+
+  .breakdown-row .val {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .breakdown-row.total .val {
+    color: var(--primary);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .show-body {
+      grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+      position: static;
+    }
+
+    .show-image-wrap {
+      height: 280px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .info-grid { grid-template-columns: 1fr; }
+    .show-title { font-size: 22px; }
+  }
+
+  /* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width:768px){
+
+.show-wrapper{
+    padding:18px 14px 40px;
+}
+
+/* Title */
+.show-title{
+    font-size:22px;
+    line-height:1.3;
+}
+
+.show-meta{
+    gap:10px;
+    font-size:13px;
+}
+
+/* Main image */
+.show-image-wrap{
+    height:230px !important;
+    border-radius:14px;
+    margin-bottom:20px;
+}
+
+/* Stack layout */
+.show-body{
+    display:flex !important;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* Details card */
+.detail-section{
+    padding:18px;
+    border-radius:14px;
+}
+
+/* Single column info */
+.info-grid{
+    grid-template-columns:1fr !important;
+    gap:14px;
+}
+
+.info-item p{
+    font-size:14px;
+}
+
+.price-highlight{
+    font-size:20px;
+}
+
+/* Booking card */
+.booking-card{
+    width: 22.5rem !important;;
+    position:static !important;
+    padding:18px;
+    border-radius:16px;
+}
+
+/* Price row */
+.booking-price-row{
+    flex-wrap:wrap;
+}
+
+.b-price{
+    font-size:24px;
+}
+
+/* Date inputs */
+.date-box{
+    grid-template-columns:1fr;
+}
+
+.date-input:first-child{
+    border-right:none;
+    border-bottom:1px solid var(--border);
+}
+
+.date-input{
+    padding:14px;
+}
+
+/* Guest */
+.guest-box{
+    padding:14px;
+}
+
+/* Days */
+.days-box{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+}
+
+/* Button */
+.reserve-btn{
+    padding:16px;
+    font-size:16px;
+}
+
+/* Breakdown */
+.breakdown-row{
+    font-size:13px;
+}
+
+.breakdown-row.total{
+    font-size:15px;
+}
+
+}
+
+/* Small Phones */
+
+@media (max-width:480px){
+
+.show-wrapper{
+    padding:14px 10px 30px;
+}
+
+.show-title{
+    font-size:20px;
+}
+
+.show-image-wrap{
+    height:200px !important;
+}
+
+.badge-row{
+    gap:6px;
+}
+
+.badge-pill{
+    font-size:11px;
+    padding:5px 10px;
+}
+
+.booking-card{
+    padding:16px;
+}
+
+.reserve-btn{
+    font-size:15px;
+}
+
+}
+
+
+#bookingData
+{
+    display: none;
+}
+
+
+@media (max-width:768px){
+
+.reserve-btn{
+    position: fixed !important;
+    
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    z-index: 99999;
+}
+.back{
+    background-color: white !important;
+}
+
+body{
+    padding-bottom:100px;
+}
+
+}
+

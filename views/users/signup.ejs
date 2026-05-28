@@ -1,0 +1,125 @@
+<% layout("layouts/boilerplate") -%>
+
+ <link rel="stylesheet" href="/css/signup.css"> 
+
+
+<div class="container auth">
+  <div class="row w-100 align-items-center">
+
+    <!-- LEFT PANEL -->
+    <div class="col-lg-6 left">
+      <div class="logo"><h2>StayNest</h2></div>
+
+      <h1>Stay Better.<br>Travel Smarter.</h1>
+
+      <p>
+        Create your account to manage reservations,
+        explore premium stays, and enjoy a seamless
+        hotel booking experience.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <span>01</span>
+          <div>
+            <strong>Instant Booking</strong>
+            Reserve premium stays faster.
+          </div>
+        </div>
+        <div class="feature">
+          <span>02</span>
+          <div>
+            <strong>Trusted Hotels</strong>
+            Verified stays and seamless check-ins.
+          </div>
+        </div>
+        <div class="feature">
+          <span>03</span>
+          <div>
+            <strong>Easy Management</strong>
+            Access all bookings from one place.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM PANEL ............................................................. -->
+    <div class="col-lg-6 form-shell">
+      <div class="signup">
+
+        <h2>Create account</h2>
+        <p>Start booking in under a minute.</p>
+
+   
+
+        <form action="/signup" method="POST" id="signupForm" novalidate class="needs-validation" >
+
+          <div class="mb-3">
+            <label class="form-label">USERNAME</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              class="form-control"
+              placeholder="Enter username"
+              required
+            >
+            <div class="field-hint" id="unHint"></div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">EMAIL ADDRESS</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="form-control"
+              placeholder="Enter email"
+              required
+            >
+            <div class="field-hint" id="emHint"></div>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">PASSWORD</label>
+            <div class="password">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="form-control"
+                placeholder="Enter password"
+                required
+              >
+              <div class="eye" id="eyeToggle" onclick="togglePassword()">👁</div>
+            </div>
+            <div class="strength-wrap">
+              <div class="strength-bar">
+                <div class="strength-seg" id="s1"></div>
+                <div class="strength-seg" id="s2"></div>
+                <div class="strength-seg" id="s3"></div>
+                <div class="strength-seg" id="s4"></div>
+              </div>
+              <div class="strength-label" id="sLabel"></div>
+            </div>
+          </div>
+
+          <button class="submit" type="submit" id="submitBtn">
+            Create Account
+          </button>
+
+          <div class="divider"></div>
+
+          <div class="footer">
+            Already have an account? <a href="/login">Log in</a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="/js/signup.js"></script>

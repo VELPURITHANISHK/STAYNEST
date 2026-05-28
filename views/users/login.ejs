@@ -1,0 +1,113 @@
+<% layout("layouts/boilerplate") -%>
+
+<link rel="stylesheet" href="/css/login.css"> 
+
+<div class="container auth">
+  <div class="row w-100 align-items-center">
+
+    <!-- LEFT PANEL -->
+    <div class="col-lg-6 left">
+      <div class="logo"><h2>StayNest</h2></div>
+
+      <h1>Welcome<br>Back.</h1>
+
+      <p>
+        Sign in to access your bookings,
+        manage reservations, and discover
+        your next perfect stay.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <span>01</span>
+          <div>
+            <strong>Your Bookings</strong>
+            View and manage all reservations.
+          </div>
+        </div>
+        <div class="feature">
+          <span>02</span>
+          <div>
+            <strong>Saved Stays</strong>
+            Pick up right where you left off.
+          </div>
+        </div>
+        <div class="feature">
+          <span>03</span>
+          <div>
+            <strong>Exclusive Deals</strong>
+            Member-only rates on premium hotels.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM PANEL................................................ -->
+    <div class="col-lg-6 form-shell">
+      <div class="login-card">
+
+        <h2>Login</h2>
+        <p>Welcome back — let's get you in.</p>
+
+        <!-- Flash error message (Passport / connect-flash) -->
+        <% if (error && error.length) { %>
+          <div class="alert-error">
+            ⚠ <%= error %>
+          </div>
+        <% } %>
+
+        <form action="/login" method="POST" id="loginForm" novalidate  class="needs-validation">
+
+          <div class="mb-3">
+            <label class="form-label">USERNAME</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              class="form-control"
+              placeholder="Enter username"
+              autocomplete="username"
+              required
+            >
+            <div class="field-hint" id="unHint"></div>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">PASSWORD</label>
+            <div class="password">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="form-control"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+              >
+              <div class="eye" id="eyeToggle" onclick="togglePassword()">👁</div>
+            </div>
+            <div class="field-hint" id="pwHint"></div>
+          </div>
+
+        
+
+          <button class="submit" type="submit" id="submitBtn">
+            Sign In
+          </button>
+
+          <div class="divider"></div>
+
+          <div class="footer">
+            Don't have an account? <a href="/signup">Sign up</a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="/js/login.js"></script>
+  

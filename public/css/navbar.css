@@ -1,0 +1,330 @@
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+    background: #fff;
+    padding: 14px 30px;
+    box-shadow: 0 2px 20px rgba(0,0,0,.05);
+    z-index: 1000;
+}
+
+/* LOGO */
+
+.navbar-brand{
+    font-size: 1.8rem;
+    font-weight: 800;
+    color:#1F3A5F !important;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.navbar-brand i{
+    font-size:1.3rem;
+}
+
+/* TOGGLER */
+
+.navbar-toggler{
+    border:none;
+    padding:10px 12px;
+    border-radius:12px;
+    border: 1px solid black;
+    background:#f4f6f8;
+}
+
+.navbar-toggler:focus{
+    box-shadow:none;
+}
+
+/* COLLAPSE */
+
+.navbar-collapse{
+    align-items:center;
+}
+
+/* SEARCH */
+
+form[role="search"]{
+    width:360px;
+}
+
+form input{
+    
+    border-radius:50px !important;
+    padding:10px 18px;
+    border:1px solid #cfcfcf ;
+}
+
+form input:focus{
+    box-shadow:none;
+    border-color:#1F3A5F;
+}
+
+form button{
+    border-radius:50px !important;
+
+    padding:
+    10px 22px;
+
+    background:#1F3A5F;
+    border:none;
+
+    color:white;
+}
+
+form button:hover{
+    background:#17304d;
+}
+
+/* LINKS */
+
+.nav-link{
+    color:#444 !important;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-link:hover{
+    color:#1F3A5F !important;
+}
+
+/* CREATE STAY */
+
+.navbar-nav .nav-link[href="/listing/new"]{
+
+    background:#1F3A5F;
+
+    color:white !important;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    margin-right:25px;
+}
+
+.navbar-nav .nav-link[href="/listing/new"]:hover{
+
+    background:#16314f;
+
+    transform:translateY(-2px);
+}
+
+/* USER BUTTON */
+
+.dropdown-toggle{
+
+background:#e7e6e6 !important;
+
+color:#222 !important;
+
+border-radius:50px !important;
+
+padding:10px 16px !important;
+
+font-weight:700;
+
+transition:.3s;
+}
+
+.dropdown-toggle:hover{
+transform:translateY(-2px);
+}
+
+.dropdown-toggle i{
+font-size:1.3rem;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu{
+
+border:none;
+
+border-radius:18px;
+
+padding:10px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.12);
+}
+
+.dropdown-item{
+
+border-radius:10px;
+
+padding:12px;
+}
+
+.dropdown-item:hover{
+
+background:#f4f6fb;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.navbar{
+padding:0.3rem;
+}
+
+.navbar-collapse{
+
+margin-top:18px;
+
+background:white;
+
+padding:0.3rem;
+
+border-radius:1rem;
+
+box-shadow:
+0 8px 30px rgba(0,0,0,.08);
+}
+
+form[role="search"]{
+width:100%;
+margin-bottom:1rem;
+}
+
+.navbar-nav{
+
+gap:0.5rem;
+}
+
+.navbar-nav .nav-link[href="/listing/new"]{
+margin-right:0;
+text-align:center;
+}
+
+.dropdown{
+width:100%;
+}
+
+.dropdown-toggle{
+width:100%;
+justify-content:center;
+}
+
+.me-5{
+margin-right:0 !important;
+}
+
+}
+
+
+/* ==========================
+      LOGIN + SIGNUP
+========================== */
+
+/* LOGIN */
+
+.navbar-nav .nav-link[href="/login"]{
+
+    color:#1F3A5F !important;
+
+    font-weight:700;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    transition:.25s;
+ margin-left:10px;
+    border:2px solid transparent;
+}
+
+.navbar-nav .nav-link[href="/login"]:hover{
+
+    background:#f3f6fa;
+
+    border-color:#dfe8f3;
+
+    transform:translateY(-2px);
+}
+
+
+/* SIGNUP */
+
+.navbar-nav .nav-link[href="/signup"]{
+
+    background:linear-gradient(
+    135deg,
+    #1F3A5F,
+     #2E5C8A
+    );
+
+    color:white !important;
+
+    font-weight:700;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    box-shadow:
+    0 10px 24px rgba(31,58,95,.18);
+
+    transition:.3s;
+
+    margin-left:10px;
+}
+
+.navbar-nav .nav-link[href="/signup"]:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 14px 30px rgba(31,58,95,.25);
+
+    color:white !important;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.navbar-nav .nav-link[href="/login"],
+
+.navbar-nav .nav-link[href="/signup"]{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+margin:0;
+
+}
+
+.navbar-nav .nav-link[href="/signup"]{
+
+margin-top:8px;
+
+}
+
+}
+
+.s-bar{
+  border: 0.5px solid rgb(208, 221, 224);
+  border-radius: 50px;
+}
+
+@media(max-width:1280px){
+    .s-bar{
+        width: 15rem;
+    }
+}
+
+@media(max-width:1011px){
+    .s-bar{
+        width: 12rem;
+    }
+}
+  
+

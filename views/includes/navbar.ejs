@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/css/navbar.css">
+
+
+  <nav class="navbar navbar-expand-md  border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand brand-color" style="color: #1F3A5F;" href="/listing"><i class="fa-solid fa-house-chimney"></i>StayNest</a>
+
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+     
+       <% if (currentPath === "/listing") { %>
+
+      <div class="navbar-nav ms-auto d-none d-lg-flex s-bar">
+            <form class="d-flex" role="search" action="#">
+              <input id="searchInput" class="form-control me-2" type="search" placeholder="Search listings..." aria-label="Search"/>
+               <button class="btn btn-outline-success" >
+                   Search
+                   </button>
+            </form>
+      </div>
+
+        <% } %>
+
+       <div class="navbar-nav ms-auto me-5">
+         <% if(currentPath !== "/signup" && currentPath !== "/login" && !currentPath.includes("/booking/mybookings")){ %>
+        <a class="nav-link me-5" href="/listing/new">Create a New Stay</a>
+          <% } %>
+        <% if(!currUser & currentPath !== "/signup" && currentPath !== "/login"){ %>
+      
+        <a class="nav-link" href="/login">Log in</a>
+        <a class="nav-link" aria-current="page" href="/signup">Sign up</a>
+        
+        <% } %>
+
+        <% if(currUser  && currentPath !== "/listing/mylistings" && currentPath !== "/booking/owner/bookings"){ %>
+        
+
+      <div class="nav-item dropdown">
+          
+          <button class="btn nav-link dropdown-toggle rounded-pill px-3 py-2 d-flex align-items-center gap-1"
+                  data-bs-toggle="dropdown"
+                  type="button"
+                 >
+      <i class="fa-solid fa-circle-user fs-5"></i>
+
+        <span>
+              <%= currUser.username %>
+        </span>
+      </button>
+          
+            <ul class="dropdown-menu dropdown-menu-end w-auto">
+                   <li><a class="dropdown-item py-1" href="/booking/mybookings">My Bookings</a></li>
+                   <li><a class="dropdown-item py-1" href="/listing/mylistings">My Listings</a></li>
+                  <hr class="dropdown-divider">
+                  <li><a class="dropdown-item py-1" href="/logout">Log out</a></li>
+            </ul>
+          </div>
+        <% } %>
+     
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+
+<script src="/js/navbar.js"></script>

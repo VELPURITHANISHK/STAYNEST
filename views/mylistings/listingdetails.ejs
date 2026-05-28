@@ -1,0 +1,126 @@
+<% layout("layouts/boilerplate") %>
+
+ <link rel="stylesheet" href="/css/listingdetails.css"> 
+<body>
+
+  <!-- Mobile overlay -->
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+  <div style="display:flex;">
+
+    <!-- ── SIDEBAR ── -->
+    <div class="sidebar" id="sidebar">
+
+      
+        <a href="/listing" class="go-home">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+<span>Go Home</span>
+
+</a>
+      <div class="sidebar-section">Menu</div>
+
+      <nav>
+
+        
+
+        <a href="/listing/mylistings"
+           class="<%= page === 'listings' ? 'active' : '' %>">
+          
+          My Listings
+        </a>
+
+        <a href="/booking/owner/bookings"
+           class="<%= page === 'totalbookings' ? 'active' : '' %>">
+          
+          Total Bookings
+        </a>
+
+      
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="/logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Logout
+        </a>
+      </div>
+
+    </div>
+
+
+<!-- ── MAIN ── -->
+<div class="main">
+
+<!-- MOBILE TOP NAV -->
+
+<div class="topbar">
+
+<div class="topbar-left">
+
+<a href="/listing" class="mobile-nav-item">
+<i class="fa-solid fa-house"></i>
+<span>Home</span>
+</a>
+
+<a
+href="/listing/mylistings"
+class="mobile-nav-item <%= page==='listings' ? 'active':'' %>">
+
+<i class="fa-solid fa-list"></i>
+<span>Listings</span>
+
+</a>
+
+<a
+href="/booking/owner/bookings"
+class="mobile-nav-item <%= page==='totalbookings' ? 'active':'' %>">
+
+<i class="fa-solid fa-cart-shopping"></i>
+<span>Total&nbsp;&nbsp;Bookings</span>
+
+</a>
+
+<a
+href="/logout"
+class="mobile-nav-item">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+<span>Logout</span>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="content">
+
+<%- include("../includes/flash.ejs") %>
+
+<% if(page==="listings"){ %>
+<%- include("./mylistings",{listings}) %>
+<% } %>
+
+<% if(page==="totalbookings"){ %>
+<%- include("../bookings/ownerbookings.ejs",{ bookings }) %>
+<% } %>
+
+</div>
+
+</div>
+
+
+
+
+  </div>
+
+ 
+
+
+<script src="/js/mylisting.js"></script>
+</body>
+

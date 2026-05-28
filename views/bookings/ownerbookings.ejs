@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="/css/ownerbooking.css">
+
+<div class="container">
+
+    <h1>My Bookings</h1>
+
+    
+
+    <% if(bookings.length === 0){ %>
+
+        <div class="alert alert-info text-center">
+            No bookings yet.
+        </div>
+
+    <% } %>
+
+    <% if(bookings.length > 0){ %>
+
+    <div class="booking-header">
+
+        <h5>Hotels</h5>
+
+        <h5>Date & Timings</h5>
+
+        
+
+    </div>
+
+    <% bookings.forEach((booking)=>{ %>
+
+    <div class="booking-card">
+
+        <!-- LEFT -->
+        <div class="hotel-section">
+
+            <img 
+            src="<%= booking.listingId.image.url %>" 
+            class="hotel-image"
+            >
+
+            <div class="hotel-content">
+
+                <h3>
+                    <%= booking.listingId.title %>
+                </h3>
+
+                <p>
+                    Guests:
+                    <%= booking.guests %>
+                </p>
+
+                <p>
+                    Booked By:
+                    <strong>
+                        <%= booking.user.username %>
+                    </strong>
+                </p>
+
+                <div class="price">
+                    ₹<%= booking.totalprice %>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CENTER -->
+        <div class="date-section">
+
+            <div>
+
+                <h6>Check-In:</h6>
+
+                <p>
+                    <%= booking.checkin.toDateString() %>
+                </p>
+
+            </div>
+
+            <div>
+
+                <h6>Check-Out:</h6>
+
+                <p>
+                    <%= booking.checkout.toDateString() %>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        
+
+    </div>
+
+    <% }) %>
+
+    <% } %>
+
+</div>

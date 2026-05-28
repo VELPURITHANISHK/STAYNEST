@@ -1,0 +1,167 @@
+<% layout("layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/mybooking.css">
+
+
+<% if (bookings.length === 0) { %>
+
+<div class="alert alert-info text-center mt-4">
+    You have not made any bookings yet.
+</div>
+
+<% } else { %>
+
+
+
+<div class="booking-container">
+
+<div class="hero">
+
+<h1>My Bookings</h1>
+
+<p>
+Manage your upcoming and completed stays
+</p>
+
+</div>
+
+
+<% if(bookings.length===0){ %>
+
+<div class="empty">
+
+<h3>No bookings yet</h3>
+
+<p>Reserve your first stay ✨</p>
+
+</div>
+
+<% } %>
+
+
+<% bookings.forEach((booking)=>{ %>
+
+<div class="booking-card">
+
+<img
+src="<%= booking.image.url %>"
+class="booking-image"
+>
+
+<div class="booking-content">
+
+<div class="top">
+
+<div>
+
+<h2>
+<%= booking.title %>
+</h2>
+
+<p class="location">
+<i class="fa-solid fa-location-dot"></i>
+<%= booking.location %>,
+<%= booking.country %>
+</p>
+
+</div>
+
+<span class="status">
+Confirmed
+</span>
+
+</div>
+
+
+<div class="meta">
+
+<div>
+
+<span>Guests</span>
+
+<b>
+<%= booking.guests %>
+</b>
+
+</div>
+
+<div>
+
+<span>Check-In</span>
+
+<b>
+<%= booking.checkin.toDateString() %>
+</b>
+
+</div>
+
+<div>
+
+<span>Check-Out</span>
+
+<b>
+<%= booking.checkout.toDateString() %>
+</b>
+
+</div>
+
+<div>
+
+<span>Nights</span>
+
+<b>
+<%= booking.days %>
+</b>
+
+</div>
+
+</div>
+
+
+<div class="pricing">
+
+<div>
+
+<p>
+₹<%= booking.price.toLocaleString("en-IN") %>
+
+×
+
+<%= booking.days %>
+
+night
+</p>
+
+<h3>
+Total :
+₹<%= booking.totalprice.toLocaleString("en-IN") %>
+
+</h3>
+
+</div>
+
+
+<form
+action="/booking/<%= booking._id %>?_method=DELETE"
+method="POST"
+>
+
+<button
+class="cancel-btn"
+>
+
+Cancel Booking
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+    <% } %>

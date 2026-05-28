@@ -1,0 +1,168 @@
+<% layout("layouts/boilerplate") -%>
+    <link rel="stylesheet" href="/css/showbookings.css"> 
+<div class="show-wrapper">
+
+
+  <!-- Title + Meta -->
+  <h1 class="show-title"><%= listing.title %></h1>
+
+  <div class="show-meta">
+    <span><i class="fa-solid fa-star" style="color:#F59E0B;"></i> 4.63 · 97 reviews</span>
+    <span>·</span>
+    <span><i class="fa-solid fa-location-dot" style="color:var(--primary);"></i> <%= listing.location %>, <%= listing.country %></span>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="show-image-wrap">
+    <img src="<%= listing.image.url %>" alt="<%= listing.title %>">
+  </div>
+
+  <!-- Two-column body -->
+  <div class="show-body">
+
+    <!-- ── LEFT ── -->
+    <div class="show-details">
+
+      <!-- Property info -->
+      <div class="detail-section">
+        <h4>Property Details</h4>
+        <div class="info-grid">
+
+          <div class="info-item">
+            <label>Price per night</label>
+            <p class="price-highlight">&#8377;<%= listing.price.toLocaleString("en-IN") %></p>
+          </div>
+
+          <div id="bookingData"
+     data-price="<%= listing.price %>">
+</div>
+
+
+
+          <div class="info-item">
+            <label>Location</label>
+            <p><%= listing.location %></p>
+          </div>
+
+          <div class="info-item">
+            <label>Country</label>
+            <p><%= listing.country %></p>
+          </div>
+
+          <div class="info-item">
+            <label>Rating</label>
+            <p>⭐ 4.63 <span style="font-weight:400; color:var(--muted);">(97 reviews)</span></p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Amenities -->
+      <div class="detail-section">
+        <h4>What this place offers</h4>
+        <div class="badge-row">
+          <span class="badge-pill"><i class="fa-solid fa-wifi"></i> Free Wifi</span>
+          <span class="badge-pill"><i class="fa-solid fa-snowflake"></i> Air Conditioning</span>
+          <span class="badge-pill"><i class="fa-solid fa-car"></i> Free Parking</span>
+          <span class="badge-pill"><i class="fa-solid fa-kitchen-set"></i> Kitchen</span>
+          <span class="badge-pill"><i class="fa-solid fa-tv"></i> Smart TV</span>
+          <span class="badge-pill"><i class="fa-solid fa-dumbbell"></i> Gym</span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <% if (listing.description) { %>
+      <div class="detail-section">
+        <h4>About this place</h4>
+        <p style="font-size:15px; color:var(--muted); line-height:1.8; margin:0;">
+          <%= listing.description %>
+        </p>
+      </div>
+      <% } %>
+
+    </div>
+
+    <!-- ── RIGHT — BOOKING CARD ── -->
+    <div>
+      <div class="booking-card">
+
+        <div class="booking-price-row">
+          <span class="b-price">&#8377;<%= listing.price.toLocaleString("en-IN") %></span>
+          <span class="b-night">/ night</span>
+          <span class="b-rating">⭐ 4.63 · 97 reviews</span>
+        </div>
+
+       <form action="/booking" method="POST" novalidate class="needs-validation" id="bookingForm">
+          <input type="hidden" name="listingId" value="<%= listing._id %>">
+
+          <!-- Dates -->
+          <div class="date-box">
+            <div class="date-input">
+              <label>Check-in</label>
+              <input type="text" id="checkin" name="checkin" placeholder="Add date" readonly >
+            </div>
+            <div class="date-input">
+              <label>Check-out</label>
+              <input type="text" id="checkout" name="checkout" placeholder="Add date" readonly >
+            </div>
+          </div>
+
+          <!-- Guests -->
+          <div class="guest-box">
+            <label>Guests</label>
+            <select name="guests" >
+                 <option value="" selected disabled>Select Guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+            </select>
+          </div>
+
+          <!-- Total days -->
+          <div class="days-box">
+            <label>Total Days</label>
+            <p id="totalDays">— Days</p>
+          </div>
+            <div class="back">
+          <button class="reserve-btn" type="submit">Reserve</button>
+          </div>
+          <p class="charge-note">You won't be charged yet</p>
+
+          <!-- Price breakdown -->
+          <div class="price-breakdown">
+            <div class="breakdown-row">
+              <span>
+                &#8377;<%= listing.price.toLocaleString("en-IN") %>
+                × <span id="nightCount">0</span> nights
+              </span>
+              <span class="val" id="totalPrice">&#8377;0</span>
+            </div>
+            <div class="breakdown-row">
+              <span>GST (18%)</span>
+              <span class="val" id="gstAmount">&#8377;0</span>
+            </div>
+            <div class="breakdown-row total">
+              <span>Total</span>
+              <span class="val" id="finalTotal">&#8377;0</span>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+    
+</script>
+
+<script src="/js/showbookings.js"></script>
