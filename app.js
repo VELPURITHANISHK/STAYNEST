@@ -83,10 +83,9 @@ const sessionOptions = {
 };
 
 
-// app.get("/",(req,res)=>
-// { 
-//     res.send("The first root");
-// });
+app.get("/", (req, res) => {
+   res.redirect("/listing");
+});
 
 app.use((req, res, next) => {
     res.locals.currentPath = req.path;
